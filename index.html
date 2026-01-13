@@ -1,84 +1,314 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="GenRecon3D: 1st Workshop on Generative 3D Reconstruction (CVPR Workshops 2026)." />
   <title>GenRecon3D | CVPRW 2026</title>
   <style>
-    :root{
-    --text:#111;
-    --muted:#555;
-    --line:#e7e7e7;
-    --link:#0b57d0;
-    --bg:#fff;
-    --max: 980px;
-    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    :root {
+      --text: #111;
+      --muted: #555;
+      --line: #e7e7e7;
+      --link: #0b57d0;
+      --bg: #fff;
+      --max: 980px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
-    html{scroll-behavior:smooth}
-    body{margin:0; background:var(--bg); color:var(--text); font-family:var(--sans); line-height:1.55}
-    main{max-width:var(--max); margin:0 auto; padding: 28px 18px 56px}
-    a{color:var(--link); text-decoration:none}
-    a:hover{text-decoration:underline}
-    hr{border:0; border-top:1px solid var(--line); margin: 18px 0}
-    h1{margin:0 0 8px; font-size: 40px; line-height:1.1}
-    h2{margin: 20px 0 8px; font-size: 22px}
-    h3{margin: 14px 0 6px; font-size: 18px}
-    p{margin: 8px 0; color: var(--text)}
-    .muted{color:var(--muted)}
-    .topline{font-size: 20px; margin: 0 0 6px}
-    .navline{margin: 10px 0 6px; font-size: 16px}
-    .navline a{margin-right: 12px}
-    .pill{display:inline-block; font-family:var(--mono); font-size: 12px; padding: 2px 8px; border: 1px solid var(--line); border-radius: 999px; background:#fafafa; margin-right:8px}
 
-
-    .editions{margin: 10px 0 0}
-    .editions a{display:inline-block; margin-right: 12px}
-
-
-    .speaker{
-    display:grid;
-    grid-template-columns: 96px 1fr;
-    gap: 14px;
-    padding: 12px 0;
-    border-top: 1px solid var(--line);
+    html {
+      scroll-behavior: smooth
     }
-    .speaker:last-child{border-bottom: 1px solid var(--line)}
-    .avatar{
-    width: 96px;
-    height: 96px;
-    border: 1px solid var(--line);
-    background: #f5f5f5;
-    display:block;
-    object-fit: contain;
-    object-position: center;
-    border-radius: 6px;
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.55
     }
-    .speakerTitle{font-weight: 650}
-    .speakerMeta{color: var(--muted); margin-top: 2px}
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 56px
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 18px 0
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 40px;
+      line-height: 1.1
+    }
+
+    h2 {
+      margin: 20px 0 8px;
+      font-size: 22px
+    }
+
+    h3 {
+      margin: 14px 0 6px;
+      font-size: 18px
+    }
+
+    p {
+      margin: 8px 0;
+      color: var(--text)
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    .topline {
+      font-size: 20px;
+      margin: 0 0 6px
+    }
+
+    .navline {
+      margin: 10px 0 6px;
+      font-size: 16px
+    }
+
+    .navline a {
+      margin-right: 12px
+    }
+
+    .pill {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 2px 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fafafa;
+      margin-right: 8px
+    }
 
 
-    table{border-collapse: collapse; width: 100%; margin-top: 8px}
-    th, td{border:1px solid var(--line); padding: 10px 10px; vertical-align: top; text-align:left}
-    th{background:#fafafa; font-weight: 650}
+    .editions {
+      margin: 10px 0 0
+    }
+
+    .editions a {
+      display: inline-block;
+      margin-right: 12px
+    }
 
 
-    ul{margin: 8px 0 8px 22px}
+    .speaker {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 14px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .speaker:last-child {
+      border-bottom: 1px solid var(--line)
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border: 1px solid var(--line);
+      background: #f5f5f5;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 6px;
+    }
+
+    .speakerTitle {
+      font-weight: 650
+    }
+
+    .speakerMeta {
+      color: var(--muted);
+      margin-top: 2px
+    }
 
 
-    .foot{margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px}
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 8px
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 10px 10px;
+      vertical-align: top;
+      text-align: left
+    }
+
+    th {
+      background: #fafafa;
+      font-weight: 650
+    }
 
 
-    @media (max-width: 640px){
-    h1{font-size: 34px}
-    .speaker{grid-template-columns: 72px 1fr}
-    .avatar{width: 72px; height: 72px}
-    .navline a{display:inline-block; margin-bottom: 6px}
+    ul {
+      margin: 8px 0 8px 22px
+    }
+
+
+    .foot {
+      margin-top: 22px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px
+    }
+
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 34px
+      }
+
+      .speaker {
+        grid-template-columns: 72px 1fr
+      }
+
+      .avatar {
+        width: 72px;
+        height: 72px
+      }
+
+      .navline a {
+        display: inline-block;
+        margin-bottom: 6px
+      }
+    }
+
+    .banner {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 1;
+      overflow: hidden;
+      margin: 20px 0 10px;
+      border: 1px solid var(--line);
+    }
+
+    .banner-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .banner-tri {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    .banner-tri.left {
+      left: 0
+    }
+
+    .banner-tri.right {
+      right: 0
+    }
+
+    .banner-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 24px;
+    }
+
+    .banner-logos {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .banner-logo {
+      height: 48px
+    }
+
+    .banner-text {
+      color: #111
+    }
+
+    .banner-title {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.1
+    }
+
+    .banner-subtitle {
+      font-size: 18px;
+      margin-top: 4px
+    }
+
+    .banner-meta {
+      font-size: 14px;
+      color: #444;
+      margin-top: 6px
+    }
+
+    @media (max-width:700px) {
+      .banner {
+        aspect-ratio: 3 / 1
+      }
+
+      .banner-title {
+        font-size: 30px
+      }
+
+      .banner-subtitle {
+        font-size: 15px
+      }
     }
   </style>
 </head>
+
 <body>
+  <header style="max-width:var(--max);margin:0 auto;padding:0 18px">
+    <div class="banner" role="img" aria-label="GenRecon3D banner">
+      <img src="images/banner/background.jpg" alt="" class="banner-bg">
+      <img src="images/banner/triangle_left.png" alt="" class="banner-tri left">
+      <img src="images/banner/triangle_right.png" alt="" class="banner-tri right">
+      <div class="banner-content">
+        <div class="banner-logos">
+          <img src="images/banner/cvpr_logo.png" alt="CVPR 2026 logo" class="banner-logo">
+          <img src="images/banner/genrecon3d_logo.png" alt="GenRecon3D logo" class="banner-logo">
+        </div>
+        <div class="banner-text">
+          <div class="banner-title">GenRecon3D</div>
+          <div class="banner-subtitle">1st Workshop on Generative 3D Reconstruction</div>
+          <div class="banner-meta">CVPR Workshops 2026 · Denver, Colorado</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <main>
     <h1>GenRecon3D</h1>
     <div class="topline">1st Workshop on Generative 3D Reconstruction</div>
@@ -96,12 +326,15 @@
 
     <h2 id="introduction">Introduction</h2>
     <p>
-      GenRecon3D consolidates emerging directions at the intersection of generative modeling and geometric reconstruction.
+      GenRecon3D consolidates emerging directions at the intersection of generative modeling and geometric
+      reconstruction.
       The workshop targets faithful recovery of underlying 3D and potentially 4D geometry from incomplete observations.
-      Unlike approaches prioritizing visual plausibility, we emphasize metric accuracy, physical correctness, and principled uncertainty reasoning.
+      Unlike approaches prioritizing visual plausibility, we emphasize metric accuracy, physical correctness, and
+      principled uncertainty reasoning.
     </p>
     <p>
-      The program features invited talks, oral and poster presentations, and community discussions on evaluation protocols and robust benchmarks
+      The program features invited talks, oral and poster presentations, and community discussions on evaluation
+      protocols and robust benchmarks
       that assess geometric and semantic accuracy beyond visible surfaces.
     </p>
 
@@ -111,8 +344,11 @@
       <img class="avatar" src="https://people.eecs.berkeley.edu/~kanazawa/img/angjoo_photo.jpg" alt="Angjoo Kanazawa">
       <div>
         <div class="speakerTitle">Angjoo Kanazawa</div>
-        <div class="speakerMeta">Assistant Professor, UC Berkeley · <a href="https://people.eecs.berkeley.edu/~kanazawa/">website</a></div>
-        <p class="muted">Angjoo Kanazawa leads the KAIR lab at Berkeley, focusing on 3D perception and generative modeling from images and video at the intersection of vision, graphics, and learning. Previously at Google Research and a BAIR postdoc at Berkeley.</p>
+        <div class="speakerMeta">Assistant Professor, UC Berkeley · <a
+            href="https://people.eecs.berkeley.edu/~kanazawa/">website</a></div>
+        <p class="muted">Angjoo Kanazawa leads the KAIR lab at Berkeley, focusing on 3D perception and generative
+          modeling from images and video at the intersection of vision, graphics, and learning. Previously at Google
+          Research and a BAIR postdoc at Berkeley.</p>
       </div>
     </div>
 
@@ -120,8 +356,12 @@
       <img class="avatar" src="https://chrirupp.github.io/images/profile.jpg" alt="Christian Rupprecht">
       <div>
         <div class="speakerTitle">Christian Rupprecht</div>
-        <div class="speakerMeta">Associate Professor, University of Oxford · <a href="https://chrirupp.github.io/">website</a></div>
-        <p class="muted">Christian Rupprecht is an Associate Professor of Computer Science at the University of Oxford and a Tutorial Fellow at Magdalen College. His research focuses on unsupervised scene understanding in 2D, 3D, and 4D from images and videos and on representation learning for reconstruction and visual understanding without manual annotations.</p>
+        <div class="speakerMeta">Associate Professor, University of Oxford · <a
+            href="https://chrirupp.github.io/">website</a></div>
+        <p class="muted">Christian Rupprecht is an Associate Professor of Computer Science at the University of Oxford
+          and a Tutorial Fellow at Magdalen College. His research focuses on unsupervised scene understanding in 2D, 3D,
+          and 4D from images and videos and on representation learning for reconstruction and visual understanding
+          without manual annotations.</p>
       </div>
     </div>
 
@@ -129,8 +369,13 @@
       <img class="avatar" src="https://katjaschwarz.github.io/assets/img/prof_pic-480.webp" alt="Katja Schwarz">
       <div>
         <div class="speakerTitle">Katja Schwarz</div>
-        <div class="speakerMeta">AI Research Scientist, SpAItial · <a href="https://katjaschwarz.github.io/">website</a></div>
-        <p class="muted">Katja Schwarz is an AI Research Scientist at SpAItial working on generative modeling and 3D vision. Her work spans neural representations for 3D inference from sparse observations and generative modeling in both 2D and 3D domains. She previously held research positions at Meta AI and completed her PhD in the Autonomous Vision Group at the University of Tübingen and the Max Planck Institute for Intelligent Systems.</p>
+        <div class="speakerMeta">AI Research Scientist, SpAItial · <a href="https://katjaschwarz.github.io/">website</a>
+        </div>
+        <p class="muted">Katja Schwarz is an AI Research Scientist at SpAItial working on generative modeling and 3D
+          vision. Her work spans neural representations for 3D inference from sparse observations and generative
+          modeling in both 2D and 3D domains. She previously held research positions at Meta AI and completed her PhD in
+          the Autonomous Vision Group at the University of Tübingen and the Max Planck Institute for Intelligent
+          Systems.</p>
       </div>
     </div>
 
@@ -139,13 +384,17 @@
       <div>
         <div class="speakerTitle">Philipp Henzler</div>
         <div class="speakerMeta">Research Scientist, Google · <a href="https://henzler.github.io/">website</a></div>
-        <p class="muted">Philipp Henzler is a Research Scientist at Google working on generative 3D AI and controllable video models. He completed his PhD at University College London, where his thesis received the Eurographics PhD Thesis Award. His research includes multi-modal generative modeling and methods related to 3D reconstruction and scene synthesis.</p>
+        <p class="muted">Philipp Henzler is a Research Scientist at Google working on generative 3D AI and controllable
+          video models. He completed his PhD at University College London, where his thesis received the Eurographics
+          PhD Thesis Award. His research includes multi-modal generative modeling and methods related to 3D
+          reconstruction and scene synthesis.</p>
       </div>
     </div>
 
 
     <h2 id="schedule">Schedule</h2>
-    <p class="muted">Half-day workshop schedule (local CVPR time). Room and streaming link will be added when available.</p>
+    <p class="muted">Half-day workshop schedule (local CVPR time). Room and streaming link will be added when available.
+    </p>
 
     <table aria-label="Workshop schedule">
       <thead>
@@ -201,8 +450,10 @@
 
     <h2 id="paper-track">Paper track</h2>
     <p>
-      We accept (i) novel full 8-page papers (CVPR 2026 format) for publication in the proceedings, and (ii) shorter 4-page extended abstracts.
-      Extended abstracts may describe novel or previously published work, will not appear in the proceedings, and will be presented during the poster session if accepted.
+      We accept (i) novel full 8-page papers (CVPR 2026 format) for publication in the proceedings, and (ii) shorter
+      4-page extended abstracts.
+      Extended abstracts may describe novel or previously published work, will not appear in the proceedings, and will
+      be presented during the poster session if accepted.
     </p>
 
     <h3>Important dates</h3>
@@ -237,111 +488,126 @@
 
     <h2 id="organizers">Organizers</h2>
     <div class="speaker">
-    <a href="https://scholar.google.com/citations?user=U9-D8DYAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
-    <img class="avatar" src="https://cvg.ethz.ch/assets/images/team/Senior-Researchers/DaneilBarath_srjpeg.jpg" alt="Daniel Barath">
-    </a>
-    <div>
-    <div class="speakerTitle">Daniel Barath</div>
-    <div class="speakerMeta">ETH Zurich, Google · <a href="mailto:dbarath@ethz.ch">dbarath@ethz.ch</a></div>
-    </div>
+      <a href="https://scholar.google.com/citations?user=U9-D8DYAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
+        <img class="avatar" src="https://cvg.ethz.ch/assets/images/team/Senior-Researchers/DaneilBarath_srjpeg.jpg"
+          alt="Daniel Barath">
+      </a>
+      <div>
+        <div class="speakerTitle">Daniel Barath</div>
+        <div class="speakerMeta">ETH Zurich, Google · <a href="mailto:dbarath@ethz.ch">dbarath@ethz.ch</a></div>
+      </div>
     </div>
 
 
     <div class="speaker">
-    <a href="https://scholar.google.com/citations?user=bERItx8AAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
-    <img class="avatar" src="https://media.licdn.com/dms/image/v2/C4D03AQEuEDok2XJdqg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1634231243864?e=1769644800&v=beta&t=b7-DXprsPDXhB2x2F27ttGUWexer61kk0Hx8rPBmci8" alt="Fabian Manhardt">
-    </a>
-    <div>
-    <div class="speakerTitle">Fabian Manhardt</div>
-    <div class="speakerMeta">Google · <a href="mailto:fabianmanhardt@google.com">fabianmanhardt@google.com</a></div>
-    </div>
+      <a href="https://scholar.google.com/citations?user=bERItx8AAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
+        <img class="avatar"
+          src="https://media.licdn.com/dms/image/v2/C4D03AQEuEDok2XJdqg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1634231243864?e=1769644800&v=beta&t=b7-DXprsPDXhB2x2F27ttGUWexer61kk0Hx8rPBmci8"
+          alt="Fabian Manhardt">
+      </a>
+      <div>
+        <div class="speakerTitle">Fabian Manhardt</div>
+        <div class="speakerMeta">Google · <a href="mailto:fabianmanhardt@google.com">fabianmanhardt@google.com</a></div>
+      </div>
     </div>
 
     <div class="speaker" style="border-top:0">
-    <a href="https://scholar.google.com/citations?user=eQ0om98AAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
-    <img class="avatar" src="https://media.licdn.com/dms/image/v2/C5103AQGjU4rRMA9xSA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517043385695?e=2147483647&v=beta&t=lTb_PpWTGOxKxaG2cW_NTBig6gqR4FWhQDc6voZN6Ro" alt="Marie-Julie Rakotosaona">
-    </a>
-    <div>
-    <div class="speakerTitle">Marie-Julie Rakotosaona</div>
-    <div class="speakerMeta">Google</div>
-    </div>
-    </div>
-
-
-    <div class="speaker">
-    <a href="https://scholar.google.com/citations?user=v1O7i_0AAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
-    <img class="avatar" src="https://m-niemeyer.github.io/assets/img/profile.jpg" alt="Michael Niemeyer">
-    </a>
-    <div>
-    <div class="speakerTitle">Michael Niemeyer</div>
-    <div class="speakerMeta">Google</div>
-    </div>
+      <a href="https://scholar.google.com/citations?user=eQ0om98AAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
+        <img class="avatar"
+          src="https://media.licdn.com/dms/image/v2/C5103AQGjU4rRMA9xSA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517043385695?e=2147483647&v=beta&t=lTb_PpWTGOxKxaG2cW_NTBig6gqR4FWhQDc6voZN6Ro"
+          alt="Marie-Julie Rakotosaona">
+      </a>
+      <div>
+        <div class="speakerTitle">Marie-Julie Rakotosaona</div>
+        <div class="speakerMeta">Google</div>
+      </div>
     </div>
 
 
     <div class="speaker">
-    <a href="https://scholar.google.com/citations?user=TFsE4BIAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
-    <img class="avatar" src="https://federicotombari.github.io/images/portrait.jpg" alt="Federico Tombari">
-    </a>
-    <div>
-    <div class="speakerTitle">Federico Tombari</div>
-    <div class="speakerMeta">Google, TUM</div>
-    </div>
-    </div>
-
-
-    <div class="speaker">
-    <a href="https://scholar.google.com/citations?user=vMcsUNAAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
-    <img class="avatar" src="https://media.licdn.com/dms/image/v2/D4E03AQGIXS5FY5UCDw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1684697240824?e=2147483647&v=beta&t=c2d2rXiOLvSkkLQCgI9tbMPgRbI6U8BXrOu5kCbVrV0" alt="Michael Oechsle">
-    </a>
-    <div>
-    <div class="speakerTitle">Michael Oechsle</div>
-    <div class="speakerMeta">Google</div>
-    </div>
+      <a href="https://scholar.google.com/citations?user=v1O7i_0AAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
+        <img class="avatar" src="https://m-niemeyer.github.io/assets/img/profile.jpg" alt="Michael Niemeyer">
+      </a>
+      <div>
+        <div class="speakerTitle">Michael Niemeyer</div>
+        <div class="speakerMeta">Google</div>
+      </div>
     </div>
 
 
     <div class="speaker">
-    <a href="https://scholar.google.com/citations?user=YYH0BjEAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
-    <img class="avatar" src="https://cvg.ethz.ch/assets/images/team/faculty/MarcPollefeys_fac.jpg" alt="Marc Pollefeys">
-    </a>
-    <div>
-    <div class="speakerTitle">Marc Pollefeys</div>
-    <div class="speakerMeta">ETH Zurich, Microsoft</div>
-    </div>
-    </div>
-
-
-    <div class="speaker">
-    <a href="" target="_blank" rel="noreferrer">
-    <img class="avatar" src="https://gradientspaces.stanford.edu/sites/g/files/sbiybj27761/files/styles/large_square/public/media/image/03_pass_0.jpg?h=36af4cfb&itok=_Z7agkbO" alt="Ata Celen">
-    </a>
-    <div>
-    <div class="speakerTitle">Ata Celen</div>
-    <div class="speakerMeta">ETH Zurich</div>
-    </div>
+      <a href="https://scholar.google.com/citations?user=TFsE4BIAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
+        <img class="avatar" src="https://federicotombari.github.io/images/portrait.jpg" alt="Federico Tombari">
+      </a>
+      <div>
+        <div class="speakerTitle">Federico Tombari</div>
+        <div class="speakerMeta">Google, TUM</div>
+      </div>
     </div>
 
 
     <div class="speaker">
-    <a href="https://scholar.google.com/citations?user=ml3laqEAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
-    <img class="avatar" src="https://cdn.prod.website-files.com/6818e6452b63182753105ed7/68f364540cc312bb0b9febc2_Keisuke_Tateno.jpg" alt="Keisuke Tateno">
-    </a>
-    <div>
-    <div class="speakerTitle">Keisuke Tateno </div>
-    <div class="speakerMeta">Google</div>
+      <a href="https://scholar.google.com/citations?user=vMcsUNAAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
+        <img class="avatar"
+          src="https://media.licdn.com/dms/image/v2/D4E03AQGIXS5FY5UCDw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1684697240824?e=2147483647&v=beta&t=c2d2rXiOLvSkkLQCgI9tbMPgRbI6U8BXrOu5kCbVrV0"
+          alt="Michael Oechsle">
+      </a>
+      <div>
+        <div class="speakerTitle">Michael Oechsle</div>
+        <div class="speakerMeta">Google</div>
+      </div>
     </div>
+
+
+    <div class="speaker">
+      <a href="https://scholar.google.com/citations?user=YYH0BjEAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
+        <img class="avatar" src="https://cvg.ethz.ch/assets/images/team/faculty/MarcPollefeys_fac.jpg"
+          alt="Marc Pollefeys">
+      </a>
+      <div>
+        <div class="speakerTitle">Marc Pollefeys</div>
+        <div class="speakerMeta">ETH Zurich, Microsoft</div>
+      </div>
+    </div>
+
+
+    <div class="speaker">
+      <a href="" target="_blank" rel="noreferrer">
+        <img class="avatar"
+          src="https://gradientspaces.stanford.edu/sites/g/files/sbiybj27761/files/styles/large_square/public/media/image/03_pass_0.jpg?h=36af4cfb&itok=_Z7agkbO"
+          alt="Ata Celen">
+      </a>
+      <div>
+        <div class="speakerTitle">Ata Celen</div>
+        <div class="speakerMeta">ETH Zurich</div>
+      </div>
+    </div>
+
+
+    <div class="speaker">
+      <a href="https://scholar.google.com/citations?user=ml3laqEAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
+        <img class="avatar"
+          src="https://cdn.prod.website-files.com/6818e6452b63182753105ed7/68f364540cc312bb0b9febc2_Keisuke_Tateno.jpg"
+          alt="Keisuke Tateno">
+      </a>
+      <div>
+        <div class="speakerTitle">Keisuke Tateno </div>
+        <div class="speakerMeta">Google</div>
+      </div>
     </div>
 
     <h2 id="contact">Contact</h2>
     <p>
-      Daniel Barath (<a href="mailto:dbarath@ethz.ch">dbarath@ethz.ch</a>) or 
+      Daniel Barath (<a href="mailto:dbarath@ethz.ch">dbarath@ethz.ch</a>) or
       Fabian Manhardt (<a href="mailto:fabianmanhardt@google.com">fabianmanhardt@google.com</a>).
     </p>
 
     <div class="foot">
-      The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+      The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was
+      provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for
+      software development and support.
     </div>
   </main>
 </body>
+
 </html>
